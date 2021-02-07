@@ -61,7 +61,3 @@
 > $ yarn build or npm build
 >```
 > Ready! The javascript files will be created in this directory: "/dist".
-
-
-
-
