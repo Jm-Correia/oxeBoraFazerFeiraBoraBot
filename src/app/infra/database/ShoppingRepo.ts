@@ -7,12 +7,14 @@ export default class ShoppingRepo implements IShoppingRepo {
     async create(data: IShop): Promise<void> {
         const { chat_id, date, items } = data;
 
-        const listaAntiga = await ShoppingSchema.findOneAndDelete({
+        const listaAntiga = await ShoppingSchema.findOneAndUpdate({
             chat_id: chat_id
+        }, {
+            $set: { date, items }
         })
+        if (!listaAntiga)
+            await ShoppingSchema.create({ chat_id, date, items });
 
-        const retorno = await ShoppingSchema.create({ chat_id, date, items });
-        console.log(retorno);
     }
 
 

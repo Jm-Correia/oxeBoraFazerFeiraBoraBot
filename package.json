@@ -1,21 +1,35 @@
 {
   "name": "oxeBoraFazerFeiraBot",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --inspect -r tsconfig-paths/register --respawn --ignore node_modules --no-notify src/main/bot/index.ts"
+    "start": "node dist/main/bot/index.js",
+    "dev": "ts-node-dev --inspect -r tsconfig-paths/register --respawn --ignore node_modules --no-notify src/main/bot/index.ts",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files"
   },
+  "repository": "https://github.com/Jm-Correia/oxeBoraFazerFeiraBoraBot.git",
+  "author": "JOÃO MARCOS CORREIA <joao.marcos.correia@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "mongoose": "^5.10.11",
-    "telegraf": "^3.17.3"
+    "telegraf": "^3.17.3",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@types/mongoose": "^5.7.37",
-    "dotenv": "^8.2.0",
+    "@types/dotenv": "^8.2.0",
     "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.1",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.0",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1"
   }
 }
