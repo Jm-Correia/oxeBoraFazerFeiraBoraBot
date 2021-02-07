@@ -8,6 +8,8 @@ export interface IItem {
 export interface IShop extends Document {
     _id?: string;
     chat_id: string;
-    date: Date;
+    date?: Date;
     items?: Array<IItem>;
 }
+
+
