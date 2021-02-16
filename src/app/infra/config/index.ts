@@ -13,6 +13,7 @@ class DataBase {
             `${process.env.MONGO_URL}`,
             {
                 useNewUrlParser: true,
+
             },
         );
     }
